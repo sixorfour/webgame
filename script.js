@@ -88,7 +88,7 @@ function regenerateEnergy() {
 }
 
 function resetGame() {
-  energy = maxEnergy;
+  energy = 3;
   wood = 0;
   stone = 0;
   food = 0;
