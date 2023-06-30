@@ -1,13 +1,31 @@
-#resources {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-span {
-    margin-right: 10px;
+#resources {
+    background-color: #f1f1f1;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#actions {
+    margin-top: 50px;
 }
 
 button {
-    margin-top: 50px;
+    padding: 10px;
+    font-size: 16px;
 }
+
+#result {
+    margin-top: 10px;
+}
+
+#newGameButton {
+    margin-right: 10px;
+}
+
