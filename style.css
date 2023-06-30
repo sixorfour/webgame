@@ -44,8 +44,12 @@ body {
   border-radius: 50%;
 }
 
+#spacer {
+  height: 60px; /* Adjust the height as needed */
+}
+
 #actions {
-  margin-top: 60px; /* Updated margin-top value */
+  margin-top: 0; /* Reset the margin-top value */
 }
 
 .action-button {
