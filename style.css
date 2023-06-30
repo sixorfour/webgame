@@ -47,11 +47,12 @@ body {
 }
 
 #spacer {
-  height: 60px; /* Adjust the height as needed */
+  height: 100px; /* Adjust the height as needed */
 }
 
 #actions {
   margin-top: 60px;
+  padding: 5px;
   display: flex;
   justify-content: center; /* Add this line */
   flex-wrap: wrap; /* Add this line */
