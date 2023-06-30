@@ -14,7 +14,8 @@ body {
   top: 10px;
   left: 10px;
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Add this line */
+  align-items: flex-start; /* Add this line */
   background-color: #f2f2f2;
   padding: 5px;
   border-radius: 5px;
@@ -26,6 +27,7 @@ body {
   display: flex;
   align-items: center;
   margin-right: 10px;
+  margin-bottom: 5px; /* Add this line */
 }
 
 .resource span {
@@ -54,7 +56,7 @@ body {
 
 .action-button {
   margin-right: 10px;
-  padding-top: 60px; /* Add this line */
+  padding-top: 60px;
 }
 
 #result {
