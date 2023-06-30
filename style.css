@@ -52,13 +52,14 @@ body {
 
 #actions {
   margin-top: 60px;
+  padding: 65px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 10px; /* Add this line */
 }
 
 .action-button {
-  margin-right: 10px;
   margin-bottom: 10px;
 }
 
