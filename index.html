@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Text-based Game</title>
+    <title>Resource Gathering Game</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -10,12 +10,14 @@
         <span id="stone">Stone: 0</span>
         <span id="food">Food: 0</span>
         <span id="energy">Energy: 3</span>
+        <button id="newGameButton">New Game</button>
     </div>
-
-    <button onclick="chopWood()">Chop Wood</button>
-    <button onclick="gatherStone()">Gather Stone</button>
-    <button onclick="forageFood()">Forage for Food</button>
-
+    <div id="actions">
+        <button onclick="chopWood()">Chop Wood</button>
+        <button onclick="gatherStone()">Gather Stone</button>
+        <button onclick="forageFood()">Forage Food</button>
+    </div>
+    <div id="result"></div>
     <script src="script.js"></script>
 </body>
 </html>
