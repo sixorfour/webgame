@@ -77,7 +77,7 @@ function regenerateEnergy() {
     const energyToRegenerate = Math.floor(elapsedSeconds / 60);
 
     if (energyToRegenerate > 0) {
-        energy = Math.min(3, energy + energyToRegenerate);
+        energy = Math.min(10, energy + energyToRegenerate);
         lastEnergyUpdate = currentTime;
         updateResources();
     }
