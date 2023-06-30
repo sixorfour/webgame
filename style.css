@@ -52,7 +52,7 @@ body {
 
 #actions {
   margin-top: 60px;
-  padding: 35px;
+  padding: 65px;
   display: flex;
   justify-content: center; /* Add this line */
   flex-wrap: wrap; /* Add this line */
