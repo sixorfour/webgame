@@ -21,6 +21,7 @@ body {
   border-radius: 5px;
   font-family: Arial, sans-serif;
   z-index: 1;
+  margin-top: 0; /* Add this line */
 }
 
 .resource {
