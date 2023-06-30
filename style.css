@@ -6,7 +6,7 @@ body {
 
 #container {
   position: relative;
-  margin-top: 10px;
+  margin-top: 60px;
 }
 
 #resources {
@@ -52,7 +52,6 @@ body {
 
 #actions {
   margin-top: 60px;
-  padding: 65px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
