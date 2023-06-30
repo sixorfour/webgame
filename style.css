@@ -47,10 +47,7 @@ body {
 }
 
 #timer {
-  position: absolute;
-  top: 60px;
-  left: 10px;
-  font-family: Arial, sans-serif;
+  margin-top: 10px;
 }
 
 #actions {
@@ -80,6 +77,6 @@ body {
 
 #newGameButton {
   position: fixed;
-  top: 60px;
+  top: 35px;
   right: 10px;
 }
