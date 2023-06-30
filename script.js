@@ -2,6 +2,7 @@ let energy = 3;
 let wood = 0;
 let stone = 0;
 let food = 0;
+let lastEnergyUpdate = new Date().getTime();
 
 function updateResources() {
     document.getElementById('wood').textContent = `Wood: ${wood}`;
@@ -16,7 +17,7 @@ function chopWood() {
         wood++;
         updateResources();
     } else {
-        alert("You don't have enough energy!");
+        displayEnergyMessage();
     }
 }
 
@@ -26,7 +27,7 @@ function gatherStone() {
         stone++;
         updateResources();
     } else {
-        alert("You don't have enough energy!");
+        displayEnergyMessage();
     }
 }
 
@@ -36,6 +37,34 @@ function forageFood() {
         food++;
         updateResources();
     } else {
-        alert("You don't have enough energy!");
+        displayEnergyMessage();
     }
 }
+
+function displayEnergyMessage() {
+    const currentTime = new Date().getTime();
+    const elapsedSeconds = Math.floor((currentTime - lastEnergyUpdate) / 1000);
+    const remainingSeconds = 24 * 60 * 60 - elapsedSeconds;
+    const remainingTime = new Date(remainingSeconds * 1000).toISOString().substr(11, 8);
+
+    const message = `You don't have enough energy! Come back in ${remainingTime} for more energy.`;
+    alert(message);
+}
+
+function regenerateEnergy() {
+    const currentTime = new Date().getTime();
+    const elapsedSeconds = Math.floor((currentTime - lastEnergyUpdate) / 1000);
+    const energyToRegenerate = Math.floor(elapsedSeconds / (24 * 60 * 60));
+
+    if (energyToRegenerate > 0) {
+        energy = Math.min(3, energy + energyToRegenerate);
+        lastEnergyUpdate = currentTime;
+        updateResources();
+    }
+}
+
+// Regenerate energy every second
+setInterval(regenerateEnergy, 1000);
+
+// Initial update of resources display
+updateResources();
