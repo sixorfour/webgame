@@ -61,6 +61,7 @@ body {
 .action-button {
   margin-right: 20px;
   margin-bottom: 10px; /* Adjust this value for vertical spacing */
+  flex-grow: 1; /* Add this line */
 }
 
 #result {
