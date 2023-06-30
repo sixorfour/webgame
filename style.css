@@ -56,15 +56,11 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 10px; /* Add this line */
 }
 
 .action-button {
-  margin-right: 10px;
   margin-bottom: 10px;
-}
-
-.action-button:last-child {
-  margin-right: 0;
 }
 
 #result {
