@@ -16,7 +16,7 @@ function chopWood() {
         energy--;
         wood += getRandomAmount();
         updateResources();
-        displayResult(`Chopped ${wood} wood.`);
+        displayResult(`Chopped ${getRandomAmount()} wood.`);
     } else {
         displayEnergyMessage();
     }
@@ -27,7 +27,7 @@ function gatherStone() {
         energy--;
         stone += getRandomAmount();
         updateResources();
-        displayResult(`Gathered ${stone} stone.`);
+        displayResult(`Gathered ${getRandomAmount()} stone.`);
     } else {
         displayEnergyMessage();
     }
@@ -38,7 +38,7 @@ function forageFood() {
         energy--;
         food += getRandomAmount();
         updateResources();
-        displayResult(`Foraged ${food} food.`);
+        displayResult(`Foraged ${getRandomAmount()} food.`);
     } else {
         displayEnergyMessage();
     }
