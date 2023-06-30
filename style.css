@@ -46,8 +46,11 @@ body {
   border-radius: 50%;
 }
 
-#spacer {
-  height: 100px; /* Adjust the height as needed */
+#timer {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  font-family: Arial, sans-serif;
 }
 
 #actions {
@@ -56,10 +59,10 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px; /* Add this line */
 }
 
 .action-button {
+  margin-right: 10px;
   margin-bottom: 10px;
 }
 
@@ -77,6 +80,6 @@ body {
 
 #newGameButton {
   position: fixed;
-  top: 35px;
+  top: 10px;
   right: 10px;
 }
