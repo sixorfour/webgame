@@ -71,12 +71,12 @@ body {
 #version {
   position: fixed;
   top: 10px;
-  right: 130px; /* Adjust the right value as needed */
+  right: 10px; /* Adjust the right value as needed */
   text-align: left;
 }
 
 #newGameButton {
   position: fixed;
-  top: 10px;
+  top: 20px;
   right: 10px;
 }
