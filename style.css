@@ -6,7 +6,7 @@ body {
 
 #resources {
   position: absolute;
-  margin-top: 10px;
+  top: 10;
   margin-left: 10px;
   display: flex;
   flex-direction: column;
