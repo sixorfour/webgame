@@ -54,7 +54,7 @@ body {
   margin-top: 60px;
   padding: 65px;
   display: flex;
-  justify-content: center; /* Add this line */
+  /*justify-content: center; /* Add this line */
   flex-wrap: wrap; /* Add this line */
 }
 
