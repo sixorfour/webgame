@@ -1,4 +1,5 @@
 let energy = 3;
+let maxEnergy = 10;
 let wood = 0;
 let stone = 0;
 let food = 0;
@@ -9,7 +10,7 @@ function updateResources() {
   document.getElementById('wood').textContent = `Wood: ${wood}`;
   document.getElementById('stone').textContent = `Stone: ${stone}`;
   document.getElementById('food').textContent = `Food: ${food}`;
-  document.getElementById('energy').textContent = `Energy: ${energy}`;
+  document.getElementById('energy').textContent = `Energy: ${energy} / ${maxEnergy}`;
 }
 
 function chopWood() {
@@ -77,7 +78,7 @@ function regenerateEnergy() {
   const energyToRegenerate = Math.floor(elapsedMilliseconds / (60 * 1000)); // Convert milliseconds to minutes
 
   if (energyToRegenerate > 0) {
-    energy = Math.min(3, energy + energyToRegenerate);
+    energy = Math.min(maxEnergy, energy + energyToRegenerate);
     lastEnergyUpdate = currentTime;
     updateResources();
   }
@@ -87,7 +88,7 @@ function regenerateEnergy() {
 }
 
 function resetGame() {
-  energy = 3;
+  energy = maxEnergy;
   wood = 0;
   stone = 0;
   food = 0;
