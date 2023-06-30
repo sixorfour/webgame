@@ -75,7 +75,6 @@ body {
   top: 10px;
   left: 10px;
   text-align: left;
-  margin-top: 0; /* Add this line */
 }
 
 #newGameButton {
