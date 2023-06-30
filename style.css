@@ -21,7 +21,6 @@ body {
   border-radius: 5px;
   font-family: Arial, sans-serif;
   z-index: 1;
-  margin-top: 0;
 }
 
 .resource {
@@ -57,7 +56,6 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
 .action-button {
@@ -73,12 +71,6 @@ body {
 #version {
   position: fixed;
   top: 10px;
-  left: 10px;
-  text-align: left;
-}
-
-#newGameButton {
-  position: fixed;
-  top: 35px;
   right: 10px;
+  text-align: left;
 }
