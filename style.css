@@ -13,13 +13,6 @@ h1 {
   text-align: left;
 }
 
-#version {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  text-align: left;
-}
-
 #actions {
   margin-top: 50px;
 }
@@ -27,6 +20,13 @@ h1 {
 #result {
   margin-top: 20px;
   font-weight: bold;
+}
+
+#version {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-align: left;
 }
 
 #newGameButton {
