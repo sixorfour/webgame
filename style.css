@@ -6,7 +6,7 @@ body {
 
 #container {
   position: relative;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 #resources {
@@ -14,8 +14,7 @@ body {
   top: 10px;
   left: 10px;
   display: flex;
-  flex-direction: column; /* Add this line */
-  align-items: flex-start; /* Add this line */
+  align-items: center;
   background-color: #f2f2f2;
   padding: 5px;
   border-radius: 5px;
@@ -27,7 +26,6 @@ body {
   display: flex;
   align-items: center;
   margin-right: 10px;
-  margin-bottom: 5px; /* Add this line */
 }
 
 .resource span {
@@ -47,16 +45,17 @@ body {
 }
 
 #spacer {
-  height: 100px; /* Adjust the height as needed */
+  height: 60px;
 }
 
 #actions {
-  margin-top: 100px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center; /* Center align the buttons */
 }
 
 .action-button {
   margin-right: 10px;
-  padding-top: 100px;
 }
 
 #result {
