@@ -6,7 +6,8 @@ body {
 
 #container {
   position: relative;
-  margin-top: 60px;
+  margin-top: 0;
+  padding-top: 60px; /* Update this line */
 }
 
 #resources {
@@ -49,7 +50,7 @@ body {
 }
 
 #actions {
-  margin-top: 60; /* Reset the margin-top value */
+  margin-top: 0; /* Reset the margin-top value */
 }
 
 .action-button {
