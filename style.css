@@ -19,7 +19,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   font-family: Arial, sans-serif;
-  z-index: 1; /* Add this line */
+  z-index: 1;
 }
 
 .resource {
@@ -45,7 +45,7 @@ body {
 }
 
 #actions {
-  margin-top: 20px;
+  margin-top: 60px; /* Updated margin-top value */
 }
 
 .action-button {
