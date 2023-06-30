@@ -6,7 +6,7 @@ body {
 
 #container {
   position: relative;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 #resources {
@@ -51,12 +51,12 @@ body {
 }
 
 #actions {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .action-button {
   margin-right: 10px;
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 #result {
