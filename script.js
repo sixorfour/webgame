@@ -64,8 +64,8 @@ function displayResult(message) {
 function displayEnergyMessage() {
     const currentTime = new Date().getTime();
     const elapsedSeconds = Math.floor((currentTime - lastEnergyUpdate) / 1000);
-    const remainingSeconds = 24 * 60 * 60 - elapsedSeconds;
-    const remainingTime = new Date(remainingSeconds * 1000).toISOString().substr(11, 8);
+    const remainingSeconds = 60 - (elapsedSeconds % 60);
+    const remainingTime = new Date(remainingSeconds * 1000).toISOString().substr(14, 5);
 
     const message = `You don't have enough energy! Come back in ${remainingTime} for more energy.`;
     alert(message);
@@ -74,7 +74,7 @@ function displayEnergyMessage() {
 function regenerateEnergy() {
     const currentTime = new Date().getTime();
     const elapsedSeconds = Math.floor((currentTime - lastEnergyUpdate) / 1000);
-    const energyToRegenerate = Math.floor(elapsedSeconds / (24 * 60 * 60));
+    const energyToRegenerate = Math.floor(elapsedSeconds / 60);
 
     if (energyToRegenerate > 0) {
         energy = Math.min(3, energy + energyToRegenerate);
@@ -83,8 +83,8 @@ function regenerateEnergy() {
     }
 }
 
-// Regenerate energy every second
-setInterval(regenerateEnergy, 1000);
+// Regenerate energy every minute
+setInterval(regenerateEnergy, 60000); // 60,000 milliseconds = 1 minute
 
 // Initial update of resources display
 updateResources();
