@@ -83,8 +83,20 @@ function regenerateEnergy() {
     }
 }
 
+function resetGame() {
+    energy = 3;
+    wood = 0;
+    stone = 0;
+    food = 0;
+    lastEnergyUpdate = new Date().getTime();
+    updateResources();
+}
+
 // Regenerate energy every minute
 setInterval(regenerateEnergy, 60000); // 60,000 milliseconds = 1 minute
 
 // Initial update of resources display
 updateResources();
+
+// Event listener for the New Game button
+document.getElementById('newGameButton').addEventListener('click', resetGame);
