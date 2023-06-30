@@ -7,3 +7,10 @@
 span {
     margin-right: 10px;
 }
+
+button {
+    position: absolute;
+    top: 60px; /* Adjust the value as needed */
+    left: 10px;
+    margin-top: 10px;
+}
