@@ -3,6 +3,7 @@ let wood = 0;
 let stone = 0;
 let food = 0;
 let lastEnergyUpdate = new Date().getTime();
+let resultTimeout;
 
 function updateResources() {
     document.getElementById('wood').textContent = `Wood: ${wood}`;
@@ -14,9 +15,10 @@ function updateResources() {
 function chopWood() {
     if (energy > 0) {
         energy--;
-        wood += getRandomAmount();
+        const amount = getRandomAmount();
+        wood += amount;
         updateResources();
-        displayResult(`Chopped ${getRandomAmount()} wood.`);
+        displayResult(`Chopped ${amount} wood.`);
     } else {
         displayEnergyMessage();
     }
@@ -25,9 +27,10 @@ function chopWood() {
 function gatherStone() {
     if (energy > 0) {
         energy--;
-        stone += getRandomAmount();
+        const amount = getRandomAmount();
+        stone += amount;
         updateResources();
-        displayResult(`Gathered ${getRandomAmount()} stone.`);
+        displayResult(`Gathered ${amount} stone.`);
     } else {
         displayEnergyMessage();
     }
@@ -36,9 +39,10 @@ function gatherStone() {
 function forageFood() {
     if (energy > 0) {
         energy--;
-        food += getRandomAmount();
+        const amount = getRandomAmount();
+        food += amount;
         updateResources();
-        displayResult(`Foraged ${getRandomAmount()} food.`);
+        displayResult(`Foraged ${amount} food.`);
     } else {
         displayEnergyMessage();
     }
@@ -50,10 +54,11 @@ function getRandomAmount() {
 
 function displayResult(message) {
     const resultContainer = document.getElementById('result');
+    clearTimeout(resultTimeout); // Clear any existing timeouts
     resultContainer.textContent = message;
-    setTimeout(() => {
+    resultTimeout = setTimeout(() => {
         resultContainer.textContent = '';
-    }, 2000);
+    }, 3000); // Display for 3 seconds
 }
 
 function displayEnergyMessage() {
