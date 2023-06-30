@@ -1,26 +1,22 @@
 #resources {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
   font-family: Arial, sans-serif;
 }
 
-.resource {
+#resources div {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.resource span {
-  margin-right: 10px;
-}
-
-.resource .value {
+#resources .value {
+  margin-left: 5px;
   font-weight: bold;
 }
 
-.resource .icon {
+#resources .icon {
   width: 20px;
   height: 20px;
   margin-right: 5px;
