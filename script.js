@@ -14,8 +14,9 @@ function updateResources() {
 function chopWood() {
     if (energy > 0) {
         energy--;
-        wood++;
+        wood += getRandomAmount();
         updateResources();
+        displayResult(`Chopped ${wood} wood.`);
     } else {
         displayEnergyMessage();
     }
@@ -24,8 +25,9 @@ function chopWood() {
 function gatherStone() {
     if (energy > 0) {
         energy--;
-        stone++;
+        stone += getRandomAmount();
         updateResources();
+        displayResult(`Gathered ${stone} stone.`);
     } else {
         displayEnergyMessage();
     }
@@ -34,11 +36,24 @@ function gatherStone() {
 function forageFood() {
     if (energy > 0) {
         energy--;
-        food++;
+        food += getRandomAmount();
         updateResources();
+        displayResult(`Foraged ${food} food.`);
     } else {
         displayEnergyMessage();
     }
+}
+
+function getRandomAmount() {
+    return Math.floor(Math.random() * 50) + 1;
+}
+
+function displayResult(message) {
+    const resultContainer = document.getElementById('result');
+    resultContainer.textContent = message;
+    setTimeout(() => {
+        resultContainer.textContent = '';
+    }, 2000);
 }
 
 function displayEnergyMessage() {
