@@ -19,6 +19,7 @@ body {
   padding: 5px;
   border-radius: 5px;
   font-family: Arial, sans-serif;
+  z-index: 1; /* Add this line */
 }
 
 .resource {
