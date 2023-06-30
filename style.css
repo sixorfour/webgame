@@ -4,11 +4,6 @@ body {
   padding: 0;
 }
 
-#container {
-  position: relative;
-  margin-top: 0;
-}
-
 #resources {
   position: absolute;
   top: 0;
