@@ -93,15 +93,14 @@ function displayResult(message) {
   const resultContainer = document.getElementById('result');
   clearTimeout(resultTimeout); // Clear any existing timeouts
 
-  // Wrap the maximum values in a span with the 'rng' class
-  message = message.replace(new RegExp(`(${maxWood}|${maxStone}|${maxFood})`, 'g'), '<span class="rng">$1</span>');
+  // Wrap RNG numbers with the 'rng' class
+  const formattedMessage = message.replace(/\d+/g, (match) => `<span class="rng">${match}</span>`);
 
-  resultContainer.innerHTML = message;
+  resultContainer.innerHTML = formattedMessage;
   resultTimeout = setTimeout(() => {
     resultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
-
 
 
 function regenerateEnergy() {
