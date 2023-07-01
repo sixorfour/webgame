@@ -47,6 +47,7 @@ body {
 
 #timer {
   text-align: center;
+  justify-content: center;
 }
 
 #spacer {
