@@ -95,7 +95,7 @@ function startTimer() {
     document.getElementById('timer').textContent = `Timer: ${time} seconds`;
 
     if (time <= 0) {
-      time = 59;
+      time = 60;
       regenerateEnergy();
     }
 
