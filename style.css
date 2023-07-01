@@ -82,6 +82,12 @@ body {
   font-weight: bold;
 }
 
+#result .rng {
+  background-color: #f2f2f2;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
 #version {
   position: fixed;
   top: 10px;
