@@ -35,7 +35,7 @@ function chopWood() {
       }
     }
   } else {
-    displayResult(message);
+    displayResult('You are out of energy! Wait a bit!');
   }
 }
 
@@ -57,7 +57,7 @@ function gatherStone() {
       }
     }
   } else {
-    displayResult(message);
+    displayResult('You are out of energy! Wait a bit!');
   }
 }
 
@@ -79,7 +79,7 @@ function forageFood() {
       }
     }
   } else {
-    displayResult(message);
+    displayResult('You are out of energy! Wait a bit!');
   }
 }
 
