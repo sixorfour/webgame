@@ -41,6 +41,10 @@ body {
   border-radius: 50%;
 }
 
+#food {
+  margin-bottom: 10px; /* Add a bottom margin for spacing */
+}
+
 #spacer {
   height: 100px;
 }
