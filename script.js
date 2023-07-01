@@ -92,7 +92,7 @@ function startTimer() {
   let time = 59;
 
   function updateTimer() {
-    document.getElementById('timer').textContent = `Timer: ${time} seconds`;
+    document.getElementById('timer').textContent = `${time} s`;
 
     if (time <= 0) {
       time = 60;
