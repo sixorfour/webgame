@@ -24,9 +24,15 @@ function chopWood() {
     } else {
       energy--;
       const amount = getRandomAmount();
-      wood = Math.min(wood + amount, maxWood);
+      const totalWood = Math.min(wood + amount, maxWood);
+      const excessWood = wood + amount - totalWood;
+      wood = totalWood;
       updateResources();
-      displayResult(`Chopped ${amount} wood.`);
+      if (excessWood > 0) {
+        displayResult(`Chopped ${amount} wood. However, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`);
+      } else {
+        displayResult(`Chopped ${amount} wood.`);
+      }
     }
   } else {
     displayEnergyMessage();
@@ -40,9 +46,15 @@ function gatherStone() {
     } else {
       energy--;
       const amount = getRandomAmount();
-      stone = Math.min(stone + amount, maxStone);
+      const totalStone = Math.min(stone + amount, maxStone);
+      const excessStone = stone + amount - totalStone;
+      stone = totalStone;
       updateResources();
-      displayResult(`Gathered ${amount} stone.`);
+      if (excessStone > 0) {
+        displayResult(`Gathered ${amount} stone. However, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`);
+      } else {
+        displayResult(`Gathered ${amount} stone.`);
+      }
     }
   } else {
     displayEnergyMessage();
@@ -56,9 +68,15 @@ function forageFood() {
     } else {
       energy--;
       const amount = getRandomAmount();
-      food = Math.min(food + amount, maxFood);
+      const totalFood = Math.min(food + amount, maxFood);
+      const excessFood = food + amount - totalFood;
+      food = totalFood;
       updateResources();
-      displayResult(`Foraged ${amount} food.`);
+      if (excessFood > 0) {
+        displayResult(`Foraged ${amount} food. However, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`);
+      } else {
+        displayResult(`Foraged ${amount} food.`);
+      }
     }
   } else {
     displayEnergyMessage();
