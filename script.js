@@ -29,7 +29,7 @@ function chopWood() {
       wood = totalWood;
       updateResources();
       if (excessWood > 0) {
-        displayResult(`You Chopped a total of ${amount} wood --\nHowever, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`);
+        displayResult(`You Chopped a total of ${amount} wood -- \n However, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`);
       } else {
         displayResult(`You Chopped ${amount} wood.`);
       }
@@ -51,7 +51,7 @@ function gatherStone() {
       stone = totalStone;
       updateResources();
       if (excessStone > 0) {
-        displayResult(`You found a total of ${amount} stone --\nHowever, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`);
+        displayResult(`You found a total of ${amount} stone -- \n However, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`);
       } else {
         displayResult(`You Gathered ${amount} stone.`);
       }
@@ -73,7 +73,7 @@ function forageFood() {
       food = totalFood;
       updateResources();
       if (excessFood > 0) {
-        displayResult(`You found a total of ${amount} food --\nHowever, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`);
+        displayResult(`You found a total of ${amount} food -- \n However, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`);
       } else {
         displayResult(`You Foraged ${amount} food.`);
       }
