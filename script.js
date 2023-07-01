@@ -5,6 +5,7 @@ let stone = 0;
 let food = 0;
 let lastEnergyUpdate = new Date().getTime();
 let resultTimeout;
+let timerInterval;
 
 function updateResources() {
   document.getElementById('wood').textContent = `Wood: ${wood}`;
@@ -87,13 +88,32 @@ function regenerateEnergy() {
   setTimeout(regenerateEnergy, 60 * 1000); // Regenerate every 1 minute
 }
 
+function startTimer() {
+  let time = 60;
+
+  function updateTimer() {
+    document.getElementById('timer').textContent = `Timer: ${time} seconds`;
+
+    if (time <= 0) {
+      time = 60;
+      regenerateEnergy();
+    }
+
+    time--;
+  }
+
+  timerInterval = setInterval(updateTimer, 1000); // Update the timer every second
+}
+
 function resetGame() {
   energy = 3;
   wood = 0;
   stone = 0;
   food = 0;
   lastEnergyUpdate = new Date().getTime();
+  clearInterval(timerInterval); // Stop the timer interval
   updateResources();
+  startTimer();
 }
 
 // Regenerate energy every minute
@@ -101,6 +121,9 @@ setTimeout(regenerateEnergy, 60 * 1000); // Initial energy regeneration after 1 
 
 // Initial update of resources display
 updateResources();
+
+// Start the timer
+startTimer();
 
 // Event listener for the New Game button
 document.getElementById('newGameButton').addEventListener('click', resetGame);
