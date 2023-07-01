@@ -93,14 +93,27 @@ function displayResult(message) {
   const resultContainer = document.getElementById('result');
   clearTimeout(resultTimeout); // Clear any existing timeouts
 
-  // Wrap RNG numbers with the 'rng' class
-  const formattedMessage = message.replace(/\d+/g, (match) => `<span class="rng">${match}</span>`);
+  // Wrap and style numbers based on their type
+  const formattedMessage = message.replace(/\d+/g, (match) => {
+    let style = '';
+
+    if (match === maxWood.toString() || match === maxStone.toString() || match === maxFood.toString()) {
+      style = 'color: black;';
+    } else if (match.includes('excess')) {
+      style = 'color: red;';
+    } else {
+      style = 'color: green;';
+    }
+
+    return `<span style="${style}">${match}</span>`;
+  });
 
   resultContainer.innerHTML = formattedMessage;
   resultTimeout = setTimeout(() => {
     resultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
+
 
 
 function regenerateEnergy() {
