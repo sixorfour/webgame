@@ -1,5 +1,8 @@
 let energy = 3;
 let maxEnergy = 10;
+let maxWood = 100; // Maximum value for wood
+let maxStone = 100; // Maximum value for stone
+let maxFood = 50; // Maximum value for food
 let wood = 0;
 let stone = 0;
 let food = 0;
@@ -8,9 +11,9 @@ let resultTimeout;
 let timerInterval;
 
 function updateResources() {
-  document.getElementById('wood').textContent = `Wood: ${wood}`;
-  document.getElementById('stone').textContent = `Stone: ${stone}`;
-  document.getElementById('food').textContent = `Food: ${food}`;
+  document.getElementById('wood').textContent = `Wood: ${wood} / ${maxWood}`;
+  document.getElementById('stone').textContent = `Stone: ${stone} / ${maxStone}`;
+  document.getElementById('food').textContent = `Food: ${food} / ${maxFood}`;
   document.getElementById('energy').textContent = `Energy: ${energy} / ${maxEnergy}`;
 }
 
@@ -18,7 +21,7 @@ function chopWood() {
   if (energy > 0) {
     energy--;
     const amount = getRandomAmount();
-    wood += amount;
+    wood = Math.min(maxWood, wood + amount); // Limit the wood value to the maximum
     updateResources();
     displayResult(`Chopped ${amount} wood.`);
   } else {
@@ -30,7 +33,7 @@ function gatherStone() {
   if (energy > 0) {
     energy--;
     const amount = getRandomAmount();
-    stone += amount;
+    stone = Math.min(maxStone, stone + amount); // Limit the stone value to the maximum
     updateResources();
     displayResult(`Gathered ${amount} stone.`);
   } else {
@@ -42,7 +45,7 @@ function forageFood() {
   if (energy > 0) {
     energy--;
     const amount = getRandomAmount();
-    food += amount;
+    food = Math.min(maxFood, food + amount); // Limit the food value to the maximum
     updateResources();
     displayResult(`Foraged ${amount} food.`);
   } else {
