@@ -91,9 +91,9 @@ function getRandomAmount() {
 function displayResult(message) {
   const resultContainer = document.getElementById('result');
   clearTimeout(resultTimeout); // Clear any existing timeouts
-  resultContainer.innerHTML = message; // Use innerHTML instead of textContent
+  resultContainer.innerHTML = message;
   resultTimeout = setTimeout(() => {
-    resultContainer.innerHTML = ''; // Clear the result container
+    resultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
 
