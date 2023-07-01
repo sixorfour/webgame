@@ -89,13 +89,13 @@ function regenerateEnergy() {
 }
 
 function startTimer() {
-  let time = 60;
+  let time = 59;
 
   function updateTimer() {
     document.getElementById('timer').textContent = `Timer: ${time} seconds`;
 
     if (time <= 0) {
-      time = 60;
+      time = 59;
       regenerateEnergy();
     }
 
