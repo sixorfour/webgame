@@ -19,11 +19,15 @@ function updateResources() {
 
 function chopWood() {
   if (energy > 0) {
-    energy--;
-    const amount = getRandomAmount();
-    wood = Math.min(maxWood, wood + amount); // Limit the wood value to the maximum
-    updateResources();
-    displayResult(`Chopped ${amount} wood.`);
+    if (wood >= maxWood) {
+      displayResult(`You have reached the maximum wood of ${maxWood}.`);
+    } else {
+      energy--;
+      const amount = getRandomAmount();
+      wood = Math.min(wood + amount, maxWood);
+      updateResources();
+      displayResult(`Chopped ${amount} wood.`);
+    }
   } else {
     displayEnergyMessage();
   }
@@ -31,11 +35,15 @@ function chopWood() {
 
 function gatherStone() {
   if (energy > 0) {
-    energy--;
-    const amount = getRandomAmount();
-    stone = Math.min(maxStone, stone + amount); // Limit the stone value to the maximum
-    updateResources();
-    displayResult(`Gathered ${amount} stone.`);
+    if (stone >= maxStone) {
+      displayResult(`You have reached the maximum stone of ${maxStone}.`);
+    } else {
+      energy--;
+      const amount = getRandomAmount();
+      stone = Math.min(stone + amount, maxStone);
+      updateResources();
+      displayResult(`Gathered ${amount} stone.`);
+    }
   } else {
     displayEnergyMessage();
   }
@@ -43,15 +51,20 @@ function gatherStone() {
 
 function forageFood() {
   if (energy > 0) {
-    energy--;
-    const amount = getRandomAmount();
-    food = Math.min(maxFood, food + amount); // Limit the food value to the maximum
-    updateResources();
-    displayResult(`Foraged ${amount} food.`);
+    if (food >= maxFood) {
+      displayResult(`You have reached the maximum food of ${maxFood}.`);
+    } else {
+      energy--;
+      const amount = getRandomAmount();
+      food = Math.min(food + amount, maxFood);
+      updateResources();
+      displayResult(`Foraged ${amount} food.`);
+    }
   } else {
     displayEnergyMessage();
   }
 }
+
 
 function getRandomAmount() {
   return Math.floor(Math.random() * 50) + 1;
