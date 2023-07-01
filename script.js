@@ -104,8 +104,17 @@ function displayEnergyMessage() {
   const remainingTime = new Date(remainingSeconds * 1000).toISOString().substr(14, 5);
 
   const message = `You don't have enough energy! Come back in ${remainingTime} for more energy.`;
-  alert(message);
+
+  const energyMessage = document.createElement('div');
+  energyMessage.className = 'message';
+  energyMessage.textContent = message;
+  document.getElementById('container').appendChild(energyMessage);
+
+  setTimeout(() => {
+    energyMessage.remove();
+  }, 10000); // Remove the message after 10 seconds
 }
+
 
 function regenerateEnergy() {
   const currentTime = new Date().getTime();
