@@ -97,25 +97,6 @@ function displayResult(message) {
   }, 10000); // Display for 10 seconds
 }
 
-function displayEnergyMessage() {
-  const currentTime = new Date().getTime();
-  const elapsedSeconds = Math.floor((currentTime - lastEnergyUpdate) / 1000);
-  const remainingSeconds = 60 - (elapsedSeconds % 60);
-  const remainingTime = new Date(remainingSeconds * 1000).toISOString().substr(14, 5);
-
-  const message = `You don't have enough energy! Come back in ${remainingTime} for more energy.`;
-
-  const energyMessage = document.createElement('div');
-  energyMessage.className = 'message';
-  energyMessage.textContent = message;
-  document.getElementById('container').appendChild(energyMessage);
-
-  setTimeout(() => {
-    energyMessage.remove();
-  }, 10000); // Remove the message after 10 seconds
-}
-
-
 function regenerateEnergy() {
   const currentTime = new Date().getTime();
   const elapsedMilliseconds = currentTime - lastEnergyUpdate;
