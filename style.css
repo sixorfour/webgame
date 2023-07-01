@@ -77,16 +77,29 @@ body {
   margin-bottom: 10px;
 }
 
-#result {
-  margin-top: 20px;
-  font-weight: bold;
+.result {
+  background-color: #f3f3f3;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow-wrap: break-word;
 }
 
-#result .rng {
-  background-color: #f2f2f2;
-  padding: 2px 5px;
-  border-radius: 5px;
+.result .rng {
+  color: #FFF;
+  background-color: #808080;
+  padding: 2px 4px;
+  border-radius: 3px;
 }
+
+.result .rng.green {
+  background-color: #3CB371;
+}
+
+.result .rng.red {
+  background-color: #FF0000;
+}
+
 
 #version {
   position: fixed;
