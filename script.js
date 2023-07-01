@@ -106,7 +106,7 @@ function displayEnergyMessage() {
   const message = `You don't have enough energy! Come back in ${remainingTime} for more energy.`;
 
   const energyMessage = document.createElement('div');
-  energyMessage.className = 'result';
+  displayResult.className = 'result';
   energyMessage.textContent = message;
   document.getElementById('container').appendChild(energyMessage);
 
