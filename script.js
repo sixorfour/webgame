@@ -20,7 +20,7 @@ function updateResources() {
 function chopWood() {
   if (energy > 0) {
     if (wood >= maxWood) {
-      displayResult(`You have reached the maximum wood of ${maxWood}.`);
+      displayResult(`You have reached the maximum of ${maxWood} wood.`);
     } else {
       energy--;
       const amount = getRandomAmount();
@@ -29,9 +29,9 @@ function chopWood() {
       wood = totalWood;
       updateResources();
       if (excessWood > 0) {
-        displayResult(`Chopped ${amount} wood. However, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`);
+        displayResult(`You Chopped a total of ${amount} wood --<br>However, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`);
       } else {
-        displayResult(`Chopped ${amount} wood.`);
+        displayResult(`You Chopped ${amount} wood.`);
       }
     }
   } else {
@@ -42,7 +42,7 @@ function chopWood() {
 function gatherStone() {
   if (energy > 0) {
     if (stone >= maxStone) {
-      displayResult(`You have reached the maximum stone of ${maxStone}.`);
+      displayResult(`You have reached the maximum of ${maxStone} stone.`);
     } else {
       energy--;
       const amount = getRandomAmount();
@@ -51,9 +51,9 @@ function gatherStone() {
       stone = totalStone;
       updateResources();
       if (excessStone > 0) {
-        displayResult(`Gathered ${amount} stone. However, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`);
+        displayResult(`You found a total of ${amount} stone --<br>However, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`);
       } else {
-        displayResult(`Gathered ${amount} stone.`);
+        displayResult(`You Gathered ${amount} stone.`);
       }
     }
   } else {
@@ -64,7 +64,7 @@ function gatherStone() {
 function forageFood() {
   if (energy > 0) {
     if (food >= maxFood) {
-      displayResult(`You have reached the maximum food of ${maxFood}.`);
+      displayResult(`You have reached the maximum of ${maxFood} food.`);
     } else {
       energy--;
       const amount = getRandomAmount();
@@ -73,9 +73,9 @@ function forageFood() {
       food = totalFood;
       updateResources();
       if (excessFood > 0) {
-        displayResult(`Foraged ${amount} food. However, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`);
+        displayResult(`You found a total of ${amount} food. However, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`);
       } else {
-        displayResult(`Foraged ${amount} food.`);
+        displayResult(`You Foraged ${amount} food.`);
       }
     }
   } else {
