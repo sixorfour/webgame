@@ -29,9 +29,9 @@ function chopWood() {
       wood = totalWood;
       updateResources();
       if (excessWood > 0) {
-        displayResult(`You Chopped a total of ${amount} wood --<br>However, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`);
+        displayResult(`You Chopped a total of <span class="rng">${amount}</span> wood --<br>However, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`);
       } else {
-        displayResult(`You Chopped ${amount} wood.`);
+        displayResult(`You Chopped <span class="rng">${amount}</span> wood.`);
       }
     }
   } else {
@@ -51,9 +51,9 @@ function gatherStone() {
       stone = totalStone;
       updateResources();
       if (excessStone > 0) {
-        displayResult(`You found a total of ${amount} stone --<br>However, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`);
+        displayResult(`You found a total of <span class="rng">${amount}</span> stone --<br>However, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`);
       } else {
-        displayResult(`You Gathered ${amount} stone.`);
+        displayResult(`You Gathered <span class="rng">${amount}</span> stone.`);
       }
     }
   } else {
@@ -73,15 +73,16 @@ function forageFood() {
       food = totalFood;
       updateResources();
       if (excessFood > 0) {
-        displayResult(`You found a total of ${amount} food --<br>However, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`);
+        displayResult(`You found a total of <span class="rng">${amount}</span> food --<br>However, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`);
       } else {
-        displayResult(`You Foraged ${amount} food.`);
+        displayResult(`You Foraged <span class="rng">${amount}</span> food.`);
       }
     }
   } else {
     displayResult('You are out of energy! Wait a bit!');
   }
 }
+
 
 
 function getRandomAmount() {
