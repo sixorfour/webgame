@@ -35,7 +35,7 @@ function chopWood() {
       }
     }
   } else {
-    displayEnergyMessage();
+    displayResult(message);
   }
 }
 
@@ -57,7 +57,7 @@ function gatherStone() {
       }
     }
   } else {
-    displayEnergyMessage();
+    displayResult(message);
   }
 }
 
@@ -79,7 +79,7 @@ function forageFood() {
       }
     }
   } else {
-    displayEnergyMessage();
+    displayResult(message);
   }
 }
 
