@@ -92,11 +92,16 @@ function getRandomAmount() {
 function displayResult(message) {
   const resultContainer = document.getElementById('result');
   clearTimeout(resultTimeout); // Clear any existing timeouts
+
+  // Wrap the maximum values in a span with the 'rng' class
+  message = message.replace(new RegExp(`(${maxWood}|${maxStone}|${maxFood})`, 'g'), '<span class="rng">$1</span>');
+
   resultContainer.innerHTML = message;
   resultTimeout = setTimeout(() => {
     resultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
+
 
 
 function regenerateEnergy() {
