@@ -94,7 +94,7 @@ function displayResult(message) {
   resultContainer.textContent = message;
   resultTimeout = setTimeout(() => {
     resultContainer.textContent = '';
-  }, 3000); // Display for 3 seconds
+  }, 10000); // Display for 10 seconds
 }
 
 function displayEnergyMessage() {
