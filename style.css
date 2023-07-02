@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('WoodenNickelNF.ttf') format('truetype'),
+       url('WoodenNickelNF.otf') format('opentype');
+}
+
 body {
   text-align: center;
   margin: 0;
