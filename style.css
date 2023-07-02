@@ -77,7 +77,7 @@ body {
   margin-bottom: 10px;
 }
 
-.result {
+.Result {
   background-color: #f3f3f3;
   padding: 10px;
   margin-bottom: 10px;
@@ -86,7 +86,7 @@ body {
   font-weight: bold;
 }
 
-.result .rng {
+.Result .rng {
   color: #FFF;
   background-color: #808080;
   padding: 2px 4px;
