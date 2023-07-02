@@ -101,7 +101,7 @@ body {
   background-color: #008000;
   padding: 2px 4px;
   border-radius: 3px;
-  font-weight: bold;
+  font-size: 18px;
 }
 
 #result .excess-rng {
@@ -109,7 +109,7 @@ body {
   background-color: #ff0000;
   padding: 2px 4px;
   border-radius: 3px;
-  font-weight: bold;
+  font-size: 18px;
 }
 
 #result .max-value {
@@ -117,7 +117,7 @@ body {
   background-color: #000000;
   padding: 2px 4px;
   border-radius: 3px;
-  font-weight: bold;
+  font-size: 18px;
 }
 
 
