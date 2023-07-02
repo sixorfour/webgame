@@ -91,7 +91,7 @@ body {
 
 #result .rng {
   color: #FFF;
-  background-color: #808080;
+  background-color: #008000;
   padding: 2px 4px;
   border-radius: 3px;
   font-weight: bold;
@@ -99,15 +99,15 @@ body {
 
 #result .excess-rng {
   color: #FFF;
-  background-color: #808080;
+  background-color: #ff0000;
   padding: 2px 4px;
   border-radius: 3px;
   font-weight: bold;
 }
 
 #result .max-value {
-  color: #000000;
-  background-color: #808080;
+  color: #FFF;
+  background-color: #000000;
   padding: 2px 4px;
   border-radius: 3px;
   font-weight: bold;
