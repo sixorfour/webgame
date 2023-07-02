@@ -99,8 +99,8 @@ function displayResult(message) {
 
     if (match === maxWood.toString() || match === maxStone.toString() || match === maxFood.toString()) {
       style = 'color: black;';
-    } else if (match.includes('excess')) {
-      style = 'color: red;';
+    } else if (match === excessWood.toString() || match === excessStone.toString() || match === excessFood.toString()) {
+  style = 'color: red;';
     } else {
       style = 'color: green;';
     }
