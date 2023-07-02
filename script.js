@@ -94,7 +94,7 @@ let ResultTimeout;
 
 // Rest of your code...
 
-function displayResult(message, isRng, isExcessRng) {
+function displayResult(message) {
   const ResultContainer = document.getElementById('result');
   clearTimeout(ResultTimeout); // Clear any existing timeouts
 
@@ -104,8 +104,8 @@ function displayResult(message, isRng, isExcessRng) {
 
     if (match === maxWood.toString() || match === maxStone.toString() || match === maxFood.toString()) {
       style = 'color: black;';
-    } else if (isExcessRng && (match === excessWood.toString() || match === excessStone.toString() || match === excessFood.toString())) {
-      style = 'color: red;';
+    } else if (match === excessWood.toString() || match === excessStone.toString() || match === excessFood.toString()) {
+      style = 'color: red; background-color: #808080;';
     } else {
       style = 'color: green;';
     }
@@ -118,6 +118,7 @@ function displayResult(message, isRng, isExcessRng) {
     ResultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
+
 
 // Rest of your code...
 
