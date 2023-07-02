@@ -101,6 +101,15 @@ body {
   font-weight: bold;
 }
 
+#result .max-value {
+  color: #000000;
+  background-color: #808080;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+
 #version {
   position: fixed;
   top: 10px;
