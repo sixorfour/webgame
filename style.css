@@ -83,6 +83,9 @@ body {
   border-radius: 5px;
   overflow-wrap: break-word;
   font-weight: bold;
+}
+
+#result.show {
   background-color: #808080;
 }
 
