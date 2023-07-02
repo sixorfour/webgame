@@ -23,7 +23,7 @@ function updateResources() {
 function chopWood() {
   if (energy > 0) {
     if (wood >= maxWood) {
-      displayResult(`You have reached the maximum of <span class="rng">${maxWood}</span> wood.`);
+      displayResult(`You have reached the maximum of <span class="max-value">${maxWood}</span> wood.`);
     } else {
       energy--;
       const amount = getRandomAmount();
@@ -32,7 +32,7 @@ function chopWood() {
       wood = totalWood;
       updateResources();
       if (excessWood > 0) {
-        displayResult(`You Chopped a total of <span class="rng">${amount}</span> wood --<br>However, you had to leave <span class="excess-rng">${excessWood}</span> behind because you reached your maximum of <span class="rng">${maxWood}</span> wood.`, true, true);
+        displayResult(`You Chopped a total of <span class="rng">${amount}</span> wood --<br>However, you had to leave <span class="excess-rng">${excessWood}</span> behind because you reached your maximum of <span class="max-value">${maxWood}</span> wood.`, true, true);
       } else {
         displayResult(`You Chopped <span class="rng">${amount}</span> wood.`, true, false);
       }
@@ -45,7 +45,7 @@ function chopWood() {
 function gatherStone() {
   if (energy > 0) {
     if (stone >= maxStone) {
-      displayResult(`You have reached the maximum of <span class="rng">${maxStone}</span> stone.`);
+      displayResult(`You have reached the maximum of <span class="max-value">${maxStone}</span> stone.`);
     } else {
       energy--;
       const amount = getRandomAmount();
@@ -54,7 +54,7 @@ function gatherStone() {
       stone = totalStone;
       updateResources();
       if (excessStone > 0) {
-        displayResult(`You found a total of <span class="rng">${amount}</span> stone --<br>However, you had to leave <span class="excess-rng">${excessStone}</span> behind because you reached your maximum of <span class="rng">${maxStone}</span> stone.`, true, true);
+        displayResult(`You found a total of <span class="rng">${amount}</span> stone --<br>However, you had to leave <span class="excess-rng">${excessStone}</span> behind because you reached your maximum of <span class="max-value">${maxStone}</span> stone.`, true, true);
       } else {
         displayResult(`You Gathered <span class="rng">${amount}</span> stone.`, true, false);
       }
@@ -67,7 +67,7 @@ function gatherStone() {
 function forageFood() {
   if (energy > 0) {
     if (food >= maxFood) {
-      displayResult(`You have reached the maximum of <span class="rng">${maxFood}</span> food.`);
+      displayResult(`You have reached the maximum of <span class="max-value">${maxFood}</span> food.`);
     } else {
       energy--;
       const amount = getRandomAmount();
@@ -76,7 +76,7 @@ function forageFood() {
       food = totalFood;
       updateResources();
       if (excessFood > 0) {
-        displayResult(`You found a total of <span class="rng">${amount}</span> food --<br>However, you had to leave <span class="excess-rng">${excessFood}</span> behind because you reached your maximum of <span class="rng">${maxFood}</span> food.`, true, true);
+        displayResult(`You found a total of <span class="rng">${amount}</span> food --<br>However, you had to leave <span class="excess-rng">${excessFood}</span> behind because you reached your maximum of <span class="max-value">${maxFood}</span> food.`, true, true);
       } else {
         displayResult(`You Foraged <span class="rng">${amount}</span> food.`, true, false);
       }
