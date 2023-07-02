@@ -10,7 +10,7 @@ let excessWood = 0;
 let excessStone = 0;
 let excessFood = 0;
 let lastEnergyUpdate = new Date().getTime();
-let resultTimeout;
+let ResultTimeout;
 let timerInterval;
 
 function updateResources() {
@@ -92,8 +92,8 @@ function getRandomAmount() {
 }
 
 function displayResult(message) {
-  const resultContainer = document.getElementById('result');
-  clearTimeout(resultTimeout); // Clear any existing timeouts
+  const ResultContainer = document.getElementById('Result');
+  clearTimeout(ResultTimeout); // Clear any existing timeouts
 
   // Wrap and style numbers based on their type
   const formattedMessage = message.replace(/\d+|<span class="rng">(\d+)<\/span>/g, (match, capture) => {
