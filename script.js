@@ -10,7 +10,7 @@ let excessWood = 0;
 let excessStone = 0;
 let excessFood = 0;
 let lastEnergyUpdate = new Date().getTime();
-let ResultTimeout;
+let resultTimeout;
 let timerInterval;
 
 function updateResources() {
@@ -86,14 +86,13 @@ function forageFood() {
   }
 }
 
-
 function getRandomAmount() {
   return Math.floor(Math.random() * 50) + 1;
 }
 
 function displayResult(message) {
-  const ResultContainer = document.getElementById('Result');
-  clearTimeout(ResultTimeout); // Clear any existing timeouts
+  const resultContainer = document.getElementById('Result');
+  clearTimeout(resultTimeout); // Clear any existing timeouts
 
   // Wrap and style numbers based on their type
   const formattedMessage = message.replace(/\d+|<span class="rng">(\d+)<\/span>/g, (match, capture) => {
@@ -115,9 +114,6 @@ function displayResult(message) {
     resultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
-
-
-
 
 function regenerateEnergy() {
   const currentTime = new Date().getTime();
