@@ -95,8 +95,8 @@ let ResultTimeout;
 // Rest of your code...
 
 function displayResult(message) {
-  const ResultContainer = document.getElementById('result');
-  clearTimeout(ResultTimeout); // Clear any existing timeouts
+  const resultContainer = document.getElementById('result');
+  clearTimeout(resultTimeout); // Clear any existing timeouts
 
   // Wrap and style numbers based on their type
   const formattedMessage = message.replace(/\d+|<span class="rng">(\d+)<\/span>/g, (match, capture) => {
@@ -113,11 +113,15 @@ function displayResult(message) {
     return `<span style="${style}">${match}</span>`;
   });
 
-  ResultContainer.innerHTML = formattedMessage;
-  ResultTimeout = setTimeout(() => {
-    ResultContainer.innerHTML = '';
+  resultContainer.innerHTML = formattedMessage;
+  resultContainer.classList.add('show'); // Add the 'show' class
+
+  resultTimeout = setTimeout(() => {
+    resultContainer.innerHTML = '';
+    resultContainer.classList.remove('show'); // Remove the 'show' class
   }, 10000); // Display for 10 seconds
 }
+
 
 
 // Rest of your code...
