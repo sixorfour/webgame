@@ -91,7 +91,7 @@ function getRandomAmount() {
 }
 
 function displayResult(message) {
-  const resultContainer = document.getElementById('Result');
+  const resultContainer = document.getElementById('resultContainer');
   clearTimeout(resultTimeout); // Clear any existing timeouts
 
   // Wrap and style numbers based on their type
@@ -152,20 +152,17 @@ function resetGame() {
   wood = 0;
   stone = 0;
   food = 0;
+  excessWood = 0;
+  excessStone = 0;
+  excessFood = 0;
   lastEnergyUpdate = new Date().getTime();
-  clearInterval(timerInterval); // Stop the timer interval
-  updateResources();
+  clearInterval(timerInterval);
   startTimer();
+  updateResources();
+  document.getElementById('resultContainer').innerHTML = '';
 }
 
-// Regenerate energy every minute
-setTimeout(regenerateEnergy, 60 * 1000); // Initial energy regeneration after 1 minute
-
-// Initial update of resources display
-updateResources();
-
-// Start the timer
-startTimer();
-
-// Event listener for the New Game button
 document.getElementById('newGameButton').addEventListener('click', resetGame);
+
+startTimer();
+updateResources();
