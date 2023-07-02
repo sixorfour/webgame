@@ -91,13 +91,7 @@ body {
   background-color: #808080;
   padding: 2px 4px;
   border-radius: 3px;
-}
-
-.result span {
-  background-color: #ccc;
-  padding: 2px 4px;
-  border-radius: 3px;
-  display: inline-block;
+  font-weight: bold;
 }
 
 
