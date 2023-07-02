@@ -93,6 +93,14 @@ body {
   font-weight: bold;
 }
 
+#result .excess-rng {
+  color: #FFF;
+  background-color: #808080;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
 #version {
   position: fixed;
   top: 10px;
