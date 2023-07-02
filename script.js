@@ -96,13 +96,13 @@ function displayResult(message) {
   clearTimeout(resultTimeout); // Clear any existing timeouts
 
   // Wrap and style numbers based on their type
-  const formattedMessage = message.replace(/\d+/g, (match) => {
+  const formattedMessage = message.replace(/\d+|<span class="rng">(\d+)<\/span>/g, (match, capture) => {
     let style = '';
 
     if (match === maxWood.toString() || match === maxStone.toString() || match === maxFood.toString()) {
       style = 'color: black;';
     } else if (match === excessWood.toString() || match === excessStone.toString() || match === excessFood.toString()) {
-  style = 'color: red;';
+      style = 'color: red;';
     } else {
       style = 'color: green;';
     }
@@ -115,6 +115,7 @@ function displayResult(message) {
     resultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
+
 
 
 
