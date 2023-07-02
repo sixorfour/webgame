@@ -32,7 +32,7 @@ function chopWood() {
       wood = totalWood;
       updateResources();
       if (excessWood > 0) {
-        displayResult(`You Chopped a total of <span class="rng">${amount}</span> wood --<br>However, you had to leave <span class="rng">${excessWood}</span> behind because you reached your maximum of <span class="rng">${maxWood}</span> wood.`, true, true);
+        displayResult(`You Chopped a total of <span class="rng">${amount}</span> wood --<br>However, you had to leave <span class="excess-rng">${excessWood}</span> behind because you reached your maximum of <span class="rng">${maxWood}</span> wood.`, true, true);
       } else {
         displayResult(`You Chopped <span class="rng">${amount}</span> wood.`, true, false);
       }
@@ -54,7 +54,7 @@ function gatherStone() {
       stone = totalStone;
       updateResources();
       if (excessStone > 0) {
-        displayResult(`You found a total of <span class="rng">${amount}</span> stone --<br>However, you had to leave <span class="rng">${excessStone}</span> behind because you reached your maximum of <span class="rng">${maxStone}</span> stone.`, true, true);
+        displayResult(`You found a total of <span class="rng">${amount}</span> stone --<br>However, you had to leave <span class="excess-rng">${excessStone}</span> behind because you reached your maximum of <span class="rng">${maxStone}</span> stone.`, true, true);
       } else {
         displayResult(`You Gathered <span class="rng">${amount}</span> stone.`, true, false);
       }
@@ -76,7 +76,7 @@ function forageFood() {
       food = totalFood;
       updateResources();
       if (excessFood > 0) {
-        displayResult(`You found a total of <span class="rng">${amount}</span> food --<br>However, you had to leave <span class="rng">${excessFood}</span> behind because you reached your maximum of <span class="rng">${maxFood}</span> food.`, true, true);
+        displayResult(`You found a total of <span class="rng">${amount}</span> food --<br>However, you had to leave <span class="excess-rng">${excessFood}</span> behind because you reached your maximum of <span class="rng">${maxFood}</span> food.`, true, true);
       } else {
         displayResult(`You Foraged <span class="rng">${amount}</span> food.`, true, false);
       }
