@@ -6,6 +6,9 @@ let maxFood = 50; // Maximum value for food
 let wood = 0;
 let stone = 0;
 let food = 0;
+let excessWood = 0;
+let excessStone = 0;
+let excessFood = 0;
 let lastEnergyUpdate = new Date().getTime();
 let resultTimeout;
 let timerInterval;
@@ -25,7 +28,7 @@ function chopWood() {
       energy--;
       const amount = getRandomAmount();
       const totalWood = Math.min(wood + amount, maxWood);
-      const excessWood = wood + amount - totalWood;
+      excessWood = wood + amount - totalWood;
       wood = totalWood;
       updateResources();
       if (excessWood > 0) {
@@ -47,7 +50,7 @@ function gatherStone() {
       energy--;
       const amount = getRandomAmount();
       const totalStone = Math.min(stone + amount, maxStone);
-      const excessStone = stone + amount - totalStone;
+      excessStone = stone + amount - totalStone;
       stone = totalStone;
       updateResources();
       if (excessStone > 0) {
@@ -69,7 +72,7 @@ function forageFood() {
       energy--;
       const amount = getRandomAmount();
       const totalFood = Math.min(food + amount, maxFood);
-      const excessFood = food + amount - totalFood;
+      excessFood = food + amount - totalFood;
       food = totalFood;
       updateResources();
       if (excessFood > 0) {
@@ -82,7 +85,6 @@ function forageFood() {
     displayResult('You are out of energy! Wait a bit!');
   }
 }
-
 
 
 function getRandomAmount() {
