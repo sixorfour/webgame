@@ -32,9 +32,9 @@ function chopWood() {
       wood = totalWood;
       updateResources();
       if (excessWood > 0) {
-        displayResult(`You Chopped a total of <span class="rng">${amount}</span> wood --<br>However, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`);
+        displayResult(`You Chopped a total of <span class="rng">${amount}</span> wood --<br>However, you had to leave ${excessWood} behind because you reached your maximum of ${maxWood} wood.`, true, true);
       } else {
-        displayResult(`You Chopped <span class="rng">${amount}</span> wood.`);
+        displayResult(`You Chopped <span class="rng">${amount}</span> wood.`, true, false);
       }
     }
   } else {
@@ -54,9 +54,9 @@ function gatherStone() {
       stone = totalStone;
       updateResources();
       if (excessStone > 0) {
-        displayResult(`You found a total of <span class="rng">${amount}</span> stone --<br>However, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`);
+        displayResult(`You found a total of <span class="rng">${amount}</span> stone --<br>However, you had to leave ${excessStone} behind because you reached your maximum of ${maxStone} stone.`, true, true);
       } else {
-        displayResult(`You Gathered <span class="rng">${amount}</span> stone.`);
+        displayResult(`You Gathered <span class="rng">${amount}</span> stone.`, true, false);
       }
     }
   } else {
@@ -76,9 +76,9 @@ function forageFood() {
       food = totalFood;
       updateResources();
       if (excessFood > 0) {
-        displayResult(`You found a total of <span class="rng">${amount}</span> food --<br>However, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`);
+        displayResult(`You found a total of <span class="rng">${amount}</span> food --<br>However, you had to leave ${excessFood} behind because you reached your maximum of ${maxFood} food.`, true, true);
       } else {
-        displayResult(`You Foraged <span class="rng">${amount}</span> food.`);
+        displayResult(`You Foraged <span class="rng">${amount}</span> food.`, true, false);
       }
     }
   } else {
@@ -94,7 +94,7 @@ let ResultTimeout;
 
 // Rest of your code...
 
-function displayResult(message) {
+function displayResult(message, isRng, isExcessRng) {
   const ResultContainer = document.getElementById('result');
   clearTimeout(ResultTimeout); // Clear any existing timeouts
 
@@ -104,7 +104,7 @@ function displayResult(message) {
 
     if (match === maxWood.toString() || match === maxStone.toString() || match === maxFood.toString()) {
       style = 'color: black;';
-    } else if (match === excessWood.toString() || match === excessStone.toString() || match === excessFood.toString()) {
+    } else if (isExcessRng && (match === excessWood.toString() || match === excessStone.toString() || match === excessFood.toString())) {
       style = 'color: red;';
     } else {
       style = 'color: green;';
@@ -120,8 +120,6 @@ function displayResult(message) {
 }
 
 // Rest of your code...
-
-
 
 function regenerateEnergy() {
   const currentTime = new Date().getTime();
