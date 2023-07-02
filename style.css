@@ -89,8 +89,7 @@ body {
   display: inline-block;
   margin-bottom: 10px;
   border-radius: 5px;
-  overflow-wrap: break-word;
-  font-weight: bold;
+  overflow-wrap: break-word;  
 }
 
 #result.show {
