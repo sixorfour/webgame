@@ -58,7 +58,7 @@ body {
 
 #timer {
   position: absolute;
-  bottom: 90;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 16px;
