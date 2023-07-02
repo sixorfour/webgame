@@ -91,8 +91,8 @@ function getRandomAmount() {
 }
 
 function displayResult(message) {
-  const resultContainer = document.getElementById('resultContainer');
-  clearTimeout(resultTimeout); // Clear any existing timeouts
+  const ResultContainer = document.getElementById('result');
+  clearTimeout(ResultTimeout); // Clear any existing timeouts
 
   // Wrap and style numbers based on their type
   const formattedMessage = message.replace(/\d+|<span class="rng">(\d+)<\/span>/g, (match, capture) => {
@@ -109,11 +109,12 @@ function displayResult(message) {
     return `<span style="${style}">${match}</span>`;
   });
 
-  resultContainer.innerHTML = formattedMessage;
-  resultTimeout = setTimeout(() => {
-    resultContainer.innerHTML = '';
+  ResultContainer.innerHTML = formattedMessage;
+  ResultTimeout = setTimeout(() => {
+    ResultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
+
 
 function regenerateEnergy() {
   const currentTime = new Date().getTime();
