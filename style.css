@@ -92,12 +92,10 @@ body {
   border-radius: 3px;
 }
 
-.result .rng.green {
-  background-color: #3CB371;
-}
-
-.result .rng.red {
-  background-color: #FF0000;
+.result span {
+  background-color: #ccc;
+  padding: 2px 4px;
+  border-radius: 3px;
 }
 
 
