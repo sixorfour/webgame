@@ -103,7 +103,7 @@ function displayResult(message) {
     let style = '';
 
     if (match === maxWood.toString() || match === maxStone.toString() || match === maxFood.toString()) {
-      style = 'color: black;';
+      style = 'color: white;';
     } else if (match === excessWood.toString() || match === excessStone.toString() || match === excessFood.toString()) {
       style = 'color: red;';
     } else {
