@@ -90,6 +90,10 @@ function getRandomAmount() {
   return Math.floor(Math.random() * 50) + 1;
 }
 
+let ResultTimeout;
+
+// Rest of your code...
+
 function displayResult(message) {
   const ResultContainer = document.getElementById('result');
   clearTimeout(ResultTimeout); // Clear any existing timeouts
@@ -114,6 +118,9 @@ function displayResult(message) {
     ResultContainer.innerHTML = '';
   }, 10000); // Display for 10 seconds
 }
+
+// Rest of your code...
+
 
 
 function regenerateEnergy() {
