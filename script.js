@@ -135,7 +135,12 @@ function getRandomAmount() {
 let ResultTimeout;
 
 function displayResult(message) {
-  const resultContainer = document.getElementById('result');
+  const resultContainer = document.getElementById('resultContainer');
+  if (!resultContainer) {
+    console.error('Cannot find resultContainer element.');
+    return;
+  }
+  
   clearTimeout(resultTimeout); // Clear any existing timeouts
 
   // Wrap and style numbers based on their type
