@@ -28,23 +28,25 @@ function startGame() {
     return;
   }
   
-var confirmed = confirm('Are you sure you want to start a new game? Any progress will be lost!');
-if (confirmed) {
-  // Reset game progress here
+  var activeGame = checkIfActiveGame(); // Function to check if there's an active game
+  if (activeGame) {
+    var confirmed = confirm('Are you sure you want to start a new game? Any progress will be lost!');
+    if (!confirmed) {
+      return;
+    }
+    // Reset game progress here
+  }
   
-  // Hide game elements
-  document.getElementById('playerContainer').style.display = 'none';
-  document.getElementById('resources').style.display = 'none';
-  document.getElementById('actions').style.display = 'none';
+  document.getElementById('playerContainer').style.display = 'block';
+  document.getElementById('playerName').innerHTML = 'Player: ' + playerName;
   
-  // Show game start section
-  document.getElementById('gameStart').style.display = 'block';
-  
-  // Clear player name input
-  document.getElementById('name').value = '';
+  document.getElementById('gameStart').style.display = 'none';
+  document.getElementById('resources').style.display = 'block';
+  document.getElementById('actions').style.display = 'block';
+  document.getElementById('newGameButton').style.display = 'block';
+  countdown();
 }
 
-}
 
 
 function countdown() {
