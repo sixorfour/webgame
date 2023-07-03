@@ -143,7 +143,7 @@ body {
 
 #newGameButton {
   top: 35px;
-  right: 0;
+  right: 10px;
 }
 
 .resultContainer.show {
