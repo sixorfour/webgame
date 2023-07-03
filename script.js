@@ -166,6 +166,8 @@ function displayResult(message, clearPrevious = true, showResult = false) {
     resultContainer.style.display = 'none'; // Hide the result container if no result message
     document.body.style.backgroundColor = ''; // Reset the background color
   }
+  // Log a message to the console when displayResult() is called
+  console.log('displayResult() called');
 }
 
 
