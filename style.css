@@ -149,3 +149,9 @@ body {
 #resultContainer.show {
   background-color: #808080;
 }
+
+#resultContainer {
+  display: none;
+  background-color: #808080;
+}
+
