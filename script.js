@@ -130,7 +130,7 @@ function getRandomAmount() {
 }
 
 function displayResult(message, clearPrevious = true, showResult = false) {
-  const resultContainer = document.querySelector('.resultContainer');
+  const resultContainer = document.querySelector('#resultContainer');
   const resultElement = document.getElementById('result');
 
   if (clearPrevious) {
