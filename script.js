@@ -14,6 +14,7 @@ let resultTimeout;
 let timerInterval;
 var activeGame = false;
 
+
 function updateResources() {
   document.getElementById('wood').textContent = `Wood: ${wood} / ${maxWood}`;
   document.getElementById('stone').textContent = `Stone: ${stone} / ${maxStone}`;
@@ -21,13 +22,15 @@ function updateResources() {
   document.getElementById('energy').textContent = `Energy: ${energy} / ${maxEnergy}`;
 }
 
+// Add the startGame function
 function startGame() {
   var playerName = document.getElementById('name').value;
   if (playerName === '') {
     alert('Please enter your name');
     return;
   }
-
+  var activeGame = true;
+  var activeGame = checkIfActiveGame(); // Function to check if there's an active game
   if (activeGame) {
     var confirmed = confirm('Are you sure you want to start a new game? Any progress will be lost!');
     if (!confirmed) {
@@ -35,22 +38,23 @@ function startGame() {
     }
     // Reset game progress here
   }
-
+  
   document.getElementById('playerContainer').style.display = 'block';
   document.getElementById('playerName').innerHTML = 'Player: ' + playerName;
-
+  
   document.getElementById('gameStart').style.display = 'none';
   document.getElementById('resources').style.display = 'block';
   document.getElementById('actions').style.display = 'block';
   document.getElementById('newGameButton').style.display = 'block';
   countdown();
-  activeGame = true;
 }
+
+
 
 function countdown() {
   var timeLeft = 60;
   var countdownElement = document.getElementById('countdown');
-  var timer = setInterval(function () {
+  var timer = setInterval(function() {
     if (timeLeft <= 0) {
       clearInterval(timer);
       endGame();
@@ -60,7 +64,11 @@ function countdown() {
   }, 1000);
 }
 
+
+
+// Add event listener to the start button
 document.getElementById('startButton').addEventListener('click', startGame);
+
 
 function chopWood() {
   if (energy > 0) {
@@ -134,13 +142,10 @@ function getRandomAmount() {
 
 let ResultTimeout;
 
+// Rest of your code...
+
 function displayResult(message) {
-  const resultContainer = document.getElementById('resultContainer');
-  if (!resultContainer) {
-    console.error('Cannot find resultContainer element.');
-    return;
-  }
-  
+  const resultContainer = document.getElementById('result');
   clearTimeout(resultTimeout); // Clear any existing timeouts
 
   // Wrap and style numbers based on their type
@@ -166,6 +171,10 @@ function displayResult(message) {
     resultContainer.classList.remove('show'); // Remove the 'show' class
   }, 10000); // Display for 10 seconds
 }
+
+
+
+// Rest of your code...
 
 function regenerateEnergy() {
   const currentTime = new Date().getTime();
