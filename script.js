@@ -126,8 +126,12 @@ function forageFood() {
 }
 
 document.getElementById('actions').addEventListener('click', function(event) {
-  if (event.target.onclick) {
-    event.target.onclick();
+  if (event.target.id === 'chopWood') {
+    chopWood();
+  } else if (event.target.id === 'gatherStone') {
+    gatherStone();
+  } else if (event.target.id === 'forageFood') {
+    forageFood();
   }
 });
 
