@@ -170,48 +170,28 @@ function regenerateEnergy() {
   const energyToRegenerate = Math.floor(elapsedMilliseconds / (60 * 1000)); // Convert milliseconds to minutes
 
   if (energyToRegenerate > 0) {
-    energy = Math.min(maxEnergy, energy + energyToRegenerate);
+    energy += energyToRegenerate;
+    energy = Math.min(energy, maxEnergy);
     lastEnergyUpdate = currentTime;
     updateResources();
   }
-
-  // Schedule the next energy regeneration
-  setTimeout(regenerateEnergy, 60 * 1000); // Regenerate every 1 minute
 }
 
-function startTimer() {
-  let time = 59;
-
-  function updateTimer() {
-    document.getElementById('timer').textContent = `${time} s`;
-
-    if (time <= 0) {
-      time = 60;
-      regenerateEnergy();
-    }
-
-    time--;
-  }
-
-  timerInterval = setInterval(updateTimer, 1000); // Update the timer every second
-}
-
-function resetGame() {
-  energy = 3;
-  wood = 0;
-  stone = 0;
-  food = 0;
-  excessWood = 0;
-  excessStone = 0;
-  excessFood = 0;
-  lastEnergyUpdate = new Date().getTime();
+function endGame() {
   clearInterval(timerInterval);
-  startTimer();
-  updateResources();
-  displayResult('', true, false); // Clear the result display
+  activeGame = false;
+  document.getElementById('resources').style.display = 'none';
+  document.getElementById('actions').style.display = 'none';
+  document.getElementById('newGameButton').style.display = 'none';
+  document.getElementById('gameStart').style.display = 'block';
+  document.getElementById('playerContainer').style.display = 'none';
 }
 
-document.getElementById('newGameButton').addEventListener('click', resetGame);
+timerInterval = setInterval(regenerateEnergy, 60000); // Regenerate energy every minute
 
-startTimer();
-updateResources();
+document.getElementById('startGameButton').addEventListener('click', startGame);
+document.getElementById('chopWoodButton').addEventListener('click', chopWood);
+document.getElementById('gatherStoneButton').addEventListener('click', gatherStone);
+document.getElementById('forageFoodButton').addEventListener('click', forageFood);
+document.getElementById('newGameButton').addEventListener('click', endGame);
+
