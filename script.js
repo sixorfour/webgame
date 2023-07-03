@@ -194,3 +194,4 @@ document.getElementById('gatherStoneButton').addEventListener('click', gatherSto
 document.getElementById('forageFoodButton').addEventListener('click', forageFood);
 document.getElementById('newGameButton').addEventListener('click', endGame);
 
+updateResources();
