@@ -155,20 +155,19 @@ function displayResult(message, clearPrevious = true, showResult = false) {
   resultElement.innerHTML += formattedMessage;
 
   if (showResult) {
-    resultContainer.style.display = 'block'; // Show the result container
-    document.body.style.backgroundColor = 'gray'; // Set the background color to gray
+    resultContainer.classList.add('show'); // Add the 'show' class to the result container
+    document.body.classList.add('result-displayed'); // Add the 'result-displayed' class to the body
     resultTimeout = setTimeout(() => {
       resultElement.innerHTML = '';
-      resultContainer.style.display = 'none'; // Hide the result container
-      document.body.style.backgroundColor = ''; // Reset the background color
+      resultContainer.classList.remove('show'); // Remove the 'show' class from the result container
+      document.body.classList.remove('result-displayed'); // Remove the 'result-displayed' class from the body
     }, 10000); // Display for 10 seconds
   } else if (clearPrevious) {
-    resultContainer.style.display = 'none'; // Hide the result container if no result message
-    document.body.style.backgroundColor = ''; // Reset the background color
+    resultContainer.classList.remove('show'); // Remove the 'show' class from the result container if no result message
+    document.body.classList.remove('result-displayed'); // Remove the 'result-displayed' class from the body
   }
-  // Log a message to the console when displayResult() is called
-  console.log('displayResult() called');
 }
+
 
 
 
