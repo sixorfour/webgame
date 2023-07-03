@@ -24,27 +24,24 @@ function updateResources() {
 function startGame() {
   const playerName = document.getElementById('name').value;
   if (playerName) {
-    // Start the game logic here
-    console.log(`Starting the game for player: ${playerName}`);
+    document.getElementById('name').style.display = 'none'; // Hide the name input field
+    document.getElementById('startButton').style.display = 'none'; // Hide the start game button
 
-    // Hide the "Enter your name" and "Start Game" elements
-    const nameInput = document.getElementById('name');
-    const startButton = document.getElementById('startButton');
-    nameInput.style.display = 'none';
-    startButton.style.display = 'none';
-
-    // Create a new element to display the player's name
     const playerNameElement = document.createElement('div');
     playerNameElement.id = 'playerName';
     playerNameElement.textContent = `Player: ${playerName}`;
 
-    // Insert the player's name element after the "New Game" button
-    const newGameButton = document.getElementById('newGameButton');
-    newGameButton.insertAdjacentElement('afterend', playerNameElement);
+    const container = document.getElementById('container');
+    container.insertBefore(playerNameElement, container.firstChild);
+
+    // Start the game logic here
+    // You can store the player's name in a variable or send it to a server for leaderboard tracking
+    console.log(`Starting the game for player: ${playerName}`);
   } else {
     alert('Please enter your name to start the game.');
   }
 }
+
 
 // Add event listener to the start button
 document.getElementById('startButton').addEventListener('click', startGame);
