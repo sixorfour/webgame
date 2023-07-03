@@ -20,6 +20,22 @@ function updateResources() {
   document.getElementById('energy').textContent = `Energy: ${energy} / ${maxEnergy}`;
 }
 
+// Add the startGame function
+function startGame() {
+  const playerName = document.getElementById('name').value;
+  if (playerName) {
+    // Start the game logic here
+    // You can store the player's name in a variable or send it to a server for leaderboard tracking
+    console.log(`Starting the game for player: ${playerName}`);
+  } else {
+    alert('Please enter your name to start the game.');
+  }
+}
+
+// Add event listener to the start button
+document.getElementById('startButton').addEventListener('click', startGame);
+
+
 function chopWood() {
   if (energy > 0) {
     if (wood >= maxWood) {
