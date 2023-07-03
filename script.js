@@ -34,7 +34,7 @@ function startGame() {
   document.getElementById('gameStart').style.display = 'none';
   document.getElementById('resources').style.display = 'block';
   document.getElementById('actions').style.display = 'block';
-  
+  document.getElementById('newGameButton').style.display = 'block';
   countdown();
 }
 
