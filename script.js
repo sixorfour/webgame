@@ -38,7 +38,7 @@ function startGame() {
 
   document.getElementById('playerContainer').style.display = 'block';
   document.getElementById('playerName').innerHTML = 'Player: ' + playerName;
-
+  document.getElementById('newGameButton').style.display = 'block';
   document.getElementById('gameStart').style.display = 'none';
   document.getElementById('resources').style.display = 'block';
   document.getElementById('actions').style.display = 'block';
