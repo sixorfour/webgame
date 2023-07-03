@@ -157,14 +157,18 @@ function displayResult(message, clearPrevious = true, showResult = false) {
 
   if (showResult) {
     resultContainer.style.display = 'block'; // Show the result container
+    document.body.style.backgroundColor = 'gray'; // Set the background color to gray
     resultTimeout = setTimeout(() => {
       resultElement.innerHTML = '';
       resultContainer.style.display = 'none'; // Hide the result container
+      document.body.style.backgroundColor = ''; // Reset the background color
     }, 10000); // Display for 10 seconds
-  } else {
+  } else if (clearPrevious) {
     resultContainer.style.display = 'none'; // Hide the result container if no result message
+    document.body.style.backgroundColor = ''; // Reset the background color
   }
 }
+
 
 
 function regenerateEnergy() {
