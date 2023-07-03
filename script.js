@@ -188,7 +188,7 @@ function endGame() {
 
 timerInterval = setInterval(regenerateEnergy, 60000); // Regenerate energy every minute
 
-document.getElementById('startGameButton').addEventListener('click', startGame);
+document.getElementById('startButton').addEventListener('click', startGame);
 document.getElementById('chopWoodButton').addEventListener('click', chopWood);
 document.getElementById('gatherStoneButton').addEventListener('click', gatherStone);
 document.getElementById('forageFoodButton').addEventListener('click', forageFood);
