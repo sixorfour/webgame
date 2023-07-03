@@ -60,8 +60,6 @@ function countdown() {
   }, 1000);
 }
 
-document.getElementById('startButton').addEventListener('click', startGame);
-
 function chopWood() {
   if (energy > 0) {
     if (wood >= maxWood) {
@@ -132,11 +130,15 @@ function getRandomAmount() {
   return Math.floor(Math.random() * 50) + 1;
 }
 
-let ResultTimeout;
+let resultTimeout;
 
-function displayResult(message) {
+function displayResult(message, clearPrevious = true, showResult = false) {
   const resultContainer = document.getElementById('result');
-  clearTimeout(resultTimeout); // Clear any existing timeouts
+  
+  if (clearPrevious) {
+    clearTimeout(resultTimeout); // Clear any existing timeouts
+    resultContainer.innerHTML = '';
+  }
 
   // Wrap and style numbers based on their type
   const formattedMessage = message.replace(/\d+|<span class="rng">(\d+)<\/span>/g, (match, capture) => {
@@ -153,13 +155,15 @@ function displayResult(message) {
     return `<span style="${style}">${match}</span>`;
   });
 
-  resultContainer.innerHTML = formattedMessage;
-  resultContainer.classList.add('show'); // Add the 'show' class
+  resultContainer.innerHTML += formattedMessage;
 
-  resultTimeout = setTimeout(() => {
-    resultContainer.innerHTML = '';
-    resultContainer.classList.remove('show'); // Remove the 'show' class
-  }, 10000); // Display for 10 seconds
+  if (showResult) {
+    resultContainer.classList.add('show'); // Add the 'show' class
+    resultTimeout = setTimeout(() => {
+      resultContainer.innerHTML = '';
+      resultContainer.classList.remove('show'); // Remove the 'show' class
+    }, 10000); // Display for 10 seconds
+  }
 }
 
 function regenerateEnergy() {
@@ -206,7 +210,7 @@ function resetGame() {
   clearInterval(timerInterval);
   startTimer();
   updateResources();
-  document.getElementById('resultContainer').innerHTML = '';
+  displayResult('', true, false); // Clear the result display
 }
 
 document.getElementById('newGameButton').addEventListener('click', resetGame);
