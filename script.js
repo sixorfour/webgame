@@ -125,6 +125,11 @@ function forageFood() {
   }
 }
 
+document.getElementById('actions').addEventListener('click', function(event) {
+  if (event.target.onclick) {
+    event.target.onclick();
+  }
+});
 
 function getRandomAmount() {
   return Math.floor(Math.random() * 50) + 1;
