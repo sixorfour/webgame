@@ -189,9 +189,16 @@ function endGame() {
 timerInterval = setInterval(regenerateEnergy, 60000); // Regenerate energy every minute
 
 document.getElementById('startButton').addEventListener('click', startGame);
-document.getElementById('chopWood').addEventListener('click', chopWood);
-document.getElementById('gatherStone').addEventListener('click', gatherStone);
-document.getElementById('forageFood').addEventListener('click', forageFood);
+document.getElementById('actions').addEventListener('click', function(event) {
+  if (event.target.id === 'chopWood') {
+    chopWood();
+  } else if (event.target.id === 'gatherStone') {
+    gatherStone();
+  } else if (event.target.id === 'forageFood') {
+    forageFood();
+  }
+});
+
 document.getElementById('newGameButton').addEventListener('click', endGame);
 
 updateResources();
