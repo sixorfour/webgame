@@ -27,11 +27,20 @@ function startGame() {
     // Start the game logic here
     console.log(`Starting the game for player: ${playerName}`);
 
-    // Hide the game start elements
-    document.getElementById('gameStart').style.display = 'none';
+    // Hide the "Enter your name" and "Start Game" elements
+    const nameInput = document.getElementById('name');
+    const startButton = document.getElementById('startButton');
+    nameInput.style.display = 'none';
+    startButton.style.display = 'none';
 
-    // Show the game play elements
-    document.getElementById('gamePlay').style.display = 'block';
+    // Create a new element to display the player's name
+    const playerNameElement = document.createElement('div');
+    playerNameElement.id = 'playerName';
+    playerNameElement.textContent = `Player: ${playerName}`;
+
+    // Insert the player's name element after the "New Game" button
+    const newGameButton = document.getElementById('newGameButton');
+    newGameButton.insertAdjacentElement('afterend', playerNameElement);
   } else {
     alert('Please enter your name to start the game.');
   }
