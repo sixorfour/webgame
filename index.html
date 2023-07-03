@@ -7,37 +7,32 @@
 </head>
 <body>
   <div id="container">
-    <div id="nameInput">
-      <label for="playerName">Enter your name:</label>
-      <input type="text" id="playerName" placeholder="Your name">
-      <button onclick="startGame()">Start Game</button>
+    <div id="resources">
+      <div id="wood">Wood: 0 / 100</div>
+      <div id="stone">Stone: 0 / 100</div>
+      <div id="food">Food: 0 / 50</div>
+      <div id="energy">Energy: 3 / 10</div>
+      <div id="timer"><span id="countdown">60</span> s</div> 
     </div>
 
-    <div id="game" style="display: none;">
-      <div id="resources">
-        <div id="wood">Wood: 0 / 100</div>
-        <div id="stone">Stone: 0 / 100</div>
-        <div id="food">Food: 0 / 50</div>
-        <div id="energy">Energy: 3 / 10</div>
-        <div id="timer"><span id="countdown">60</span> s</div> 
-      </div>
-
-      <div id="actions">
-        <button onclick="chopWood()">Chop Wood</button>
-        <button onclick="gatherStone()">Gather Stone</button>
-        <button onclick="forageFood()">Forage Food</button>
-      </div>
-
-      <div id="resultContainer"></div>
-      <!-- Other HTML code... -->
-
-      <div id="result"></div>
-
-      <!-- Other HTML code... -->
-
-      <div id="version">Version: name yoself</div>
-      <button id="newGameButton">New Game</button>
+    <div id="actions">
+      <button onclick="chopWood()">Chop Wood</button>
+      <button onclick="gatherStone()">Gather Stone</button>
+      <button onclick="forageFood()">Forage Food</button>
     </div>
+
+    <div id="resultContainer"></div>
+    <div>
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name">
+    </div>
+
+    <button id="startButton">Start Game</button>
+
+    <div id="result"></div>
+
+    <div id="version">Version: fuckin with resource padding</div>
+    <button id="newGameButton">New Game</button>
   </div>
 
   <script src="script.js"></script>
