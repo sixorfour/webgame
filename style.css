@@ -92,7 +92,8 @@ body {
   display: inline-block;
   margin-bottom: 10px;
   border-radius: 5px;
-  overflow-wrap: break-word;  
+  overflow-wrap: break-word; 
+  background-color: #808080;
 }
 
 #result.show {
