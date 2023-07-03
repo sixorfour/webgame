@@ -34,6 +34,8 @@ function startGame() {
     const container = document.getElementById('container');
     container.insertBefore(playerNameElement, container.firstChild);
 
+    document.getElementById('gameContent').style.display = 'block'; // Show the game content
+
     // Start the game logic here
     // You can store the player's name in a variable or send it to a server for leaderboard tracking
     console.log(`Starting the game for player: ${playerName}`);
@@ -41,6 +43,7 @@ function startGame() {
     alert('Please enter your name to start the game.');
   }
 }
+
 
 
 // Add event listener to the start button
