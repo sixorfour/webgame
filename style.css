@@ -123,6 +123,9 @@ body {
   font-size: 18px;
 }
 
+#gameContent {
+  display: none;
+}
 
 #version {
   position: fixed;
