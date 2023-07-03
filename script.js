@@ -130,11 +130,12 @@ function getRandomAmount() {
 }
 
 function displayResult(message, clearPrevious = true, showResult = false) {
-  const resultContainer = document.getElementById('result');
-  
+  const resultContainer = document.getElementById('resultContainer');
+  const resultElement = document.getElementById('result');
+
   if (clearPrevious) {
     clearTimeout(resultTimeout); // Clear any existing timeouts
-    resultContainer.innerHTML = '';
+    resultElement.innerHTML = '';
   }
 
   // Wrap and style numbers based on their type
@@ -152,12 +153,12 @@ function displayResult(message, clearPrevious = true, showResult = false) {
     return `<span style="${style}">${match}</span>`;
   });
 
-  resultContainer.innerHTML += formattedMessage;
+  resultElement.innerHTML += formattedMessage;
 
   if (showResult) {
     resultContainer.classList.add('show'); // Add the 'show' class
     resultTimeout = setTimeout(() => {
-      resultContainer.innerHTML = '';
+      resultElement.innerHTML = '';
       resultContainer.classList.remove('show'); // Remove the 'show' class
     }, 10000); // Display for 10 seconds
   }
