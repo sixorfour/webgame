@@ -28,15 +28,24 @@ function startGame() {
     return;
   }
   
-  document.getElementById('playerContainer').style.display = 'block';
-  document.getElementById('playerName').innerHTML = 'Player: ' + playerName;
+var confirmed = confirm('Are you sure you want to start a new game? Any progress will be lost!');
+if (confirmed) {
+  // Reset game progress here
   
-  document.getElementById('gameStart').style.display = 'none';
-  document.getElementById('resources').style.display = 'block';
-  document.getElementById('actions').style.display = 'block';
-  document.getElementById('newGameButton').style.display = 'block';
-  countdown();
+  // Hide game elements
+  document.getElementById('playerContainer').style.display = 'none';
+  document.getElementById('resources').style.display = 'none';
+  document.getElementById('actions').style.display = 'none';
+  
+  // Show game start section
+  document.getElementById('gameStart').style.display = 'block';
+  
+  // Clear player name input
+  document.getElementById('name').value = '';
 }
+
+}
+
 
 function countdown() {
   var timeLeft = 60;
