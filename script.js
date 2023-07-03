@@ -25,8 +25,13 @@ function startGame() {
   const playerName = document.getElementById('name').value;
   if (playerName) {
     // Start the game logic here
-    // You can store the player's name in a variable or send it to a server for leaderboard tracking
     console.log(`Starting the game for player: ${playerName}`);
+
+    // Hide the game start elements
+    document.getElementById('gameStart').style.display = 'none';
+
+    // Show the game play elements
+    document.getElementById('gamePlay').style.display = 'block';
   } else {
     alert('Please enter your name to start the game.');
   }
