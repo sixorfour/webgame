@@ -155,5 +155,13 @@ body {
   background-color: #808080;
 }
 
+.resultContainer.show {
+  display: block;
+}
+
+.result-displayed {
+  background-color: gray;
+}
+
 
 
