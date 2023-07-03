@@ -12,6 +12,8 @@ let excessFood = 0;
 let lastEnergyUpdate = new Date().getTime();
 let resultTimeout;
 let timerInterval;
+var activeGame = false;
+
 
 function updateResources() {
   document.getElementById('wood').textContent = `Wood: ${wood} / ${maxWood}`;
@@ -27,7 +29,7 @@ function startGame() {
     alert('Please enter your name');
     return;
   }
-  
+  var activeGame = true;
   var activeGame = checkIfActiveGame(); // Function to check if there's an active game
   if (activeGame) {
     var confirmed = confirm('Are you sure you want to start a new game? Any progress will be lost!');
