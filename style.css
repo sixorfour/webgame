@@ -149,7 +149,8 @@ body {
 
 #playerName, #version, #newGameButton {
   background-color: #808080;
-  padding: 20px;
-  border-radius: 20px;
-  color: #FFF;
+  padding: 5px;
+  border-radius: 5px;
+  color: #000000;
+  position: absolute;
 }
