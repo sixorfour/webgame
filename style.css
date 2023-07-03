@@ -145,3 +145,7 @@ body {
   top: 35px;
   right: 0;
 }
+
+#resultContainer.show {
+  background-color: #808080;
+}
