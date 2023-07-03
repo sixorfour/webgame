@@ -156,13 +156,16 @@ function displayResult(message, clearPrevious = true, showResult = false) {
   resultElement.innerHTML += formattedMessage;
 
   if (showResult) {
-    resultContainer.classList.add('show'); // Add the 'show' class
+    resultContainer.style.display = 'block'; // Show the result container
     resultTimeout = setTimeout(() => {
       resultElement.innerHTML = '';
-      resultContainer.classList.remove('show'); // Remove the 'show' class
+      resultContainer.style.display = 'none'; // Hide the result container
     }, 10000); // Display for 10 seconds
+  } else {
+    resultContainer.style.display = 'none'; // Hide the result container if no result message
   }
 }
+
 
 function regenerateEnergy() {
   const currentTime = new Date().getTime();
