@@ -31,8 +31,8 @@ function startGame() {
     playerNameElement.id = 'playerName';
     playerNameElement.textContent = `Player: ${playerName}`;
 
-    const container = document.getElementById('container');
-    container.insertBefore(playerNameElement, container.firstChild);
+    const newGameButton = document.getElementById('newGameButton');
+    newGameButton.parentNode.insertBefore(playerNameElement, newGameButton.nextSibling);
 
     document.getElementById('gameContent').style.display = 'block'; // Show the game content
 
