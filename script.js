@@ -33,8 +33,8 @@ function startGame() {
 
     document.getElementById('gameContent').style.display = 'block'; // Show the game content
 
-    // Hide the New Game button
-    document.getElementById('newGameButton').style.display = 'none';
+    // Show the New Game button
+    document.getElementById('newGameButton').style.display = 'inline-block';
 
     // Start the game logic here
     // You can store the player's name in a variable or send it to a server for leaderboard tracking
@@ -43,6 +43,7 @@ function startGame() {
     alert('Please enter your name to start the game.');
   }
 }
+
 
 
 
