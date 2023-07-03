@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-   <div id="container">
+  <div id="container">
     <div id="gameStart">
       <div>
         <label for="name">Enter your name:</label>
@@ -15,6 +15,11 @@
       <button id="startButton">Start Game</button>
     </div>
     <div id="gameContent" style="display: none;">
+      <div id="playerContainer" style="display: none;">
+        <div id="playerName"></div>
+        <div id="gameVersion"></div>
+      </div>
+
       <div id="resources">
         <div id="wood">Wood: 0 / 100</div>
         <div id="stone">Stone: 0 / 100</div>
@@ -32,7 +37,7 @@
       <div id="resultContainer"></div>
       <div id="result"></div>
 
-      <div id="version">Version: APPologies</div>
+      <div id="version">Version: APPologies 2.0</div>
       <button id="newGameButton">New Game</button>
     </div>
   </div>
