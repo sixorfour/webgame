@@ -138,37 +138,21 @@ function displayResult(message, clearPrevious = true, showResult = false) {
     resultElement.innerHTML = '';
   }
 
-  // Wrap and style numbers based on their type
-  const formattedMessage = message.replace(/\d+|<span class="rng">(\d+)<\/span>/g, (match, capture) => {
-    let style = '';
-
-    if (match === maxWood.toString() || match === maxStone.toString() || match === maxFood.toString() ||
-        match === excessWood.toString() || match === excessStone.toString() || match === excessFood.toString()) {
-      style = 'color: white;';
-    } else {
-      style = 'color: green;';
-    }
-
-    return `<span style="${style}">${match}</span>`;
-  });
-
-  resultElement.innerHTML += formattedMessage;
+  resultElement.innerHTML += message;
 
   if (showResult) {
-    resultContainer.classList.add('show'); // Add the 'show' class to the result container
-    document.body.classList.add('result-displayed'); // Add the 'result-displayed' class to the body
+    resultContainer.style.display = 'block'; // Show the result container
+    document.body.style.backgroundColor = 'gray'; // Set the background color to gray
     resultTimeout = setTimeout(() => {
       resultElement.innerHTML = '';
-      resultContainer.classList.remove('show'); // Remove the 'show' class from the result container
-      document.body.classList.remove('result-displayed'); // Remove the 'result-displayed' class from the body
+      resultContainer.style.display = 'none'; // Hide the result container
+      document.body.style.backgroundColor = ''; // Reset the background color
     }, 10000); // Display for 10 seconds
   } else if (clearPrevious) {
-    resultContainer.classList.remove('show'); // Remove the 'show' class from the result container if no result message
-    document.body.classList.remove('result-displayed'); // Remove the 'result-displayed' class from the body
+    resultContainer.style.display = 'none'; // Hide the result container if no result message
+    document.body.style.backgroundColor = ''; // Reset the background color
   }
 }
-
-
 
 
 function regenerateEnergy() {
