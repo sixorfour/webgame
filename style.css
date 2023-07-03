@@ -146,13 +146,14 @@ body {
   right: 10px;
 }
 
-.resultContainer.show {
+#resultContainer.show {
   background-color: #808080;
 }
 
-.resultContainer {
+#resultContainer {
   display: none;
   background-color: #808080;
 }
+
 
 
