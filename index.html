@@ -15,12 +15,9 @@
       <button id="startButton">Start Game</button>
     </div>
     <div id="gameContent" style="display: none;">
-      <div id="infoContainer">
-        <div id="version">Version: newest and truest</div>
-        <div id="playerContainer" style="display: none;">
-          <div id="playerName"></div>
-        </div>
-        <button id="newGameButton">New Game</button>
+      <div id="playerContainer" style="display: none;">
+        <div id="playerName"></div>
+        <div id="gameVersion" style="display: none;"></div> <!-- Added display: none; -->
       </div>
 
       <div id="resources">
@@ -41,6 +38,8 @@
       <div id="result"></div>
     </div>
   </div>
+  <div id="version" style="display: none;">Version: gotdang chillis</div> <!-- Added display: none; -->
+  <button id="newGameButton" style="display: none;">New Game</button> <!-- Added display: none; -->
 
   <script src="script.js"></script>
 </body>
