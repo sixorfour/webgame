@@ -22,29 +22,33 @@ function updateResources() {
 
 // Add the startGame function
 function startGame() {
-  const playerName = document.getElementById('name').value;
-  if (playerName) {
-    document.getElementById('name').style.display = 'none'; // Hide the name input field
-    document.getElementById('startButton').style.display = 'none'; // Hide the start game button
-
-    // Hide the label for the name input field
-    document.querySelector('label[for="name"]').style.display = 'none';
-
-    const playerNameElement = document.getElementById('playerName');
-    playerNameElement.textContent = `Player: ${playerName}`;
-    document.getElementById('playerContainer').style.display = 'block'; // Show the playerContainer
-
-    document.getElementById('gameContent').style.display = 'block'; // Show the game content
-
-    // Show the New Game button
-    document.getElementById('newGameButton').style.display = 'inline-block';
-
-    // Start the game logic here
-    // You can store the player's name in a variable or send it to a server for leaderboard tracking
-    console.log(`Starting the game for player: ${playerName}`);
-  } else {
-    alert('Please enter your name to start the game.');
+  var playerName = document.getElementById('name').value;
+  if (playerName === '') {
+    alert('Please enter your name');
+    return;
   }
+  
+  document.getElementById('playerContainer').style.display = 'block';
+  document.getElementById('playerName').innerHTML = 'Player: ' + playerName;
+  
+  document.getElementById('gameStart').style.display = 'none';
+  document.getElementById('resources').style.display = 'block';
+  document.getElementById('actions').style.display = 'block';
+  
+  countdown();
+}
+
+function countdown() {
+  var timeLeft = 60;
+  var countdownElement = document.getElementById('countdown');
+  var timer = setInterval(function() {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      endGame();
+    }
+    countdownElement.innerHTML = timeLeft;
+    timeLeft -= 1;
+  }, 1000);
 }
 
 
