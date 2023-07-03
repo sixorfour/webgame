@@ -130,8 +130,6 @@ function getRandomAmount() {
   return Math.floor(Math.random() * 50) + 1;
 }
 
-let resultTimeout;
-
 function displayResult(message, clearPrevious = true, showResult = false) {
   const resultContainer = document.getElementById('result');
   
