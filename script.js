@@ -27,14 +27,14 @@ function startGame() {
     document.getElementById('name').style.display = 'none'; // Hide the name input field
     document.getElementById('startButton').style.display = 'none'; // Hide the start game button
 
-    const playerNameElement = document.createElement('div');
-    playerNameElement.id = 'playerName';
+    const playerNameElement = document.getElementById('playerName');
     playerNameElement.textContent = `Player: ${playerName}`;
-
-    const newGameButton = document.getElementById('newGameButton');
-    newGameButton.parentNode.insertBefore(playerNameElement, newGameButton.nextSibling);
+    document.getElementById('playerContainer').style.display = 'block'; // Show the playerContainer
 
     document.getElementById('gameContent').style.display = 'block'; // Show the game content
+
+    // Hide the New Game button
+    document.getElementById('newGameButton').style.display = 'none';
 
     // Start the game logic here
     // You can store the player's name in a variable or send it to a server for leaderboard tracking
@@ -43,6 +43,7 @@ function startGame() {
     alert('Please enter your name to start the game.');
   }
 }
+
 
 
 
