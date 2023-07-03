@@ -14,7 +14,7 @@ body {
 #resources {
   position: absolute;
   top: 20px;
-  left: 20px; /* Changed margin-left to left */
+  left: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -127,30 +127,25 @@ body {
   display: none;
 }
 
-#version {
-  position: fixed;
+#gamedatadetails {
+  position: absolute;
   top: 10px;
   right: 15px;
-  text-align: left;
-}
-
-#newGameButton {
-  position: fixed;
-  top: 35px;
-  right: 10px;
-}
-
-#playerName {
-  position: fixed;
-  top: 10px; /* Adjusted position */
-  right: 15px;
-  text-align: right;
-}
-
-#playerName, #version, #newGameButton {
   background-color: #808080;
   padding: 5px;
   border-radius: 5px;
   color: #000000;
-  position: absolute;
+}
+
+#playerName {
+  text-align: right;
+}
+
+#newGameButton {
+  top: 35px;
+  right: 10px;
+}
+
+#playerContainer {
+  display: none;
 }
