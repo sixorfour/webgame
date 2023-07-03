@@ -15,28 +15,28 @@
       <button id="startButton">Start Game</button>
     </div>
     
-      <div id="resources">
-        <div id="wood">Wood: 0 / 100</div>
-        <div id="stone">Stone: 0 / 100</div>
-        <div id="food">Food: 0 / 50</div>
-        <div id="energy">Energy: 3 / 10</div>
-        <div id="timer"><span id="countdown">60</span> s</div> 
-      </div>
-
-      <div id="actions">
-        <button onclick="chopWood()">Chop Wood</button>
-        <button onclick="gatherStone()">Gather Stone</button>
-        <button onclick="forageFood()">Forage Food</button>
-      </div>
-
-      <div id="resultContainer"></div>
-      <div id="result"></div>
+    <div id="resources" style="display: none;">
+      <div id="wood">Wood: 0 / 100</div>
+      <div id="stone">Stone: 0 / 100</div>
+      <div id="food">Food: 0 / 50</div>
+      <div id="energy">Energy: 3 / 10</div>
+      <div id="timer"><span id="countdown">60</span> s</div> 
     </div>
+
+    <div id="actions" style="display: none;">
+      <button onclick="chopWood()">Chop Wood</button>
+      <button onclick="gatherStone()">Gather Stone</button>
+      <button onclick="forageFood()">Forage Food</button>
+    </div>
+
+    <div id="resultContainer"></div>
+    <div id="result"></div>
   </div>
+
   <div id="gamedatadetails">
     <div id="version">Version: 1.8</div>
     <button id="newGameButton">New Game</button>
-    <div id="playerContainer">
+    <div id="playerContainer" style="display: none;">
       <div id="playerName">Player: (enter name)</div>
     </div>
   </div>
